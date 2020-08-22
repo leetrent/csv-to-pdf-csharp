@@ -1,0 +1,1 @@
+set APPSETTINGS_DIRECTORY=C:\Users\Lee\Dev\GSA\Payroll\Repo\csv-to-pdf-csharp\PdfGen

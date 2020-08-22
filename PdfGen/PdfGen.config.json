@@ -1,0 +1,12 @@
+{
+    "AppConfiguration": {
+      "Templates": {
+        "SF3100": {
+          "Filename": "templates//SF3100-GSA_PAR_v1_clean_120319.pdf"
+        },
+        "SF2806": {
+          "Filename": "templates//SF2806_GSA_v1_CLEAN.pdf"
+        }
+      }
+    }
+}
