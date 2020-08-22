@@ -5,7 +5,7 @@ using iText.Forms;
 using iText.Forms.Fields;
 using iText.Kernel.Pdf;
 
-namespace RetirementReporting
+namespace PdfGen.Utils
 {
     public static class PdfUtil
     {
