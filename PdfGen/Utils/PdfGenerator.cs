@@ -30,20 +30,20 @@ namespace PdfGen.Utils
             using (MemoryStream outerMemoryStream = new MemoryStream())
             {
                 PdfWriter pdfWriter = new PdfWriter(outerMemoryStream).SetSmartMode(true);
-                PdfDocument pdfDoc = new PdfDocument(pdfWriter);
-                pdfDoc.InitializeOutlines();
+                PdfDocument toPdfDoc = new PdfDocument(pdfWriter);
+                toPdfDoc.InitializeOutlines();
 
-                 PdfDocument srcPdfDoc = null;
+                 PdfDocument fromPdfDoc = null;
 
                  foreach (var etlRec in _etlRecords)
                  {
                      byte[] formFieldsInRow = this.fillFormFieldsInRow(etlRec);
                      MemoryStream innerMemoryStream = new MemoryStream(formFieldsInRow);;
                      PdfReader pdfReader = new PdfReader(innerMemoryStream);
-                     srcPdfDoc = new PdfDocument(pdfReader);
-                     srcPdfDoc.CopyPagesTo(1, srcPdfDoc.GetNumberOfPages(), pdfDoc);
+                     fromPdfDoc = new PdfDocument(pdfReader);
+                     fromPdfDoc.CopyPagesTo(1, fromPdfDoc.GetNumberOfPages(), toPdfDoc);
                  }
-                 pdfDoc.Close();
+                 toPdfDoc.Close();
                  return outerMemoryStream.ToArray();
             }
         }
