@@ -29,8 +29,8 @@ namespace PdfGen
             string outputDestination = $"{outputDirectory}{outFile}";
             Console.WriteLine(logSnippet + $"(outputDestination): '{outputDestination}'");
 
-            IDictionary<string, PdfFormField> pdfFields = PdfUtil.DiscoverPDFFields(template);
-            PdfUtil.PrintPDFFields(pdfFields, outputDestination, false);
+            IDictionary<string, PdfFormField> pdfFields = PdfFieldsUtil.DiscoverPDFFields(template);
+            PdfFieldsUtil.PrintPDFFields(pdfFields, outputDestination, false);
         }
     }
 }
